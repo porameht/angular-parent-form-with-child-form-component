@@ -1,15 +1,16 @@
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 import { Component, Input } from '@angular/core';
-import { FormControl, FormGroupDirective } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
-  selector: 'hello',
+  selector: 'world',
   template: `
-    <input type="text" [formControl]="name">
+    <input type="text" [formControl]="form.get('price')">
   `,
   styles: [`h1 { font-family: Lato; }`],
 })
-export class HelloComponent {
-  @Input() name: any;
+export class WorldComponent {
+  @Input() form: any;
 
   constructor(private fg: FormGroupDirective) {
     this.fg.ngSubmit.subscribe(() => {

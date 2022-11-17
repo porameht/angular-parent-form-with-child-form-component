@@ -1,7 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  method 1 >>
   <hello [name]="form.get('name')"></hello>
-  <button type="submit">Purchase</button>
+  {{ form.value.name | json }}
+  <br />
+  <br />
+  method 2 >>
   <input type="text" formControlName="title" />
+  {{ form.value.title | json }}
+  <br />
+  <br />
+  method 3 >>
+  <world [form]="form"></world>
+  {{ form.value.price | json }}
+  <br />
+  <br />
+  <button type="submit">submit</button>
 </form>
-
-{{ form.value.name | json }},{{ form.value.title | json }}
