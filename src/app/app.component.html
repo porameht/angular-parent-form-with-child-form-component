@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <hello [name]="form.get('name')"></hello>
+  <button type="submit">Purchase</button>
+  <input type="text" formControlName="title" />
+</form>
+
+{{ form.value.name | json }},{{ form.value.title | json }}
